@@ -10,7 +10,7 @@ namespace Text.Tests
         /// <summary>
         /// Test to check if the string is palindrome
         /// </summary>
-        [TestCase("Opera")]
+        [TestCase("Noon")]
         [TestCase("level")]
         [TestCase("dad")]
         [TestCase("civiC")]

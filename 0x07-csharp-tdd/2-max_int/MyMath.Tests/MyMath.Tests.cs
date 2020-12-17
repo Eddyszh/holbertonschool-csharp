@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace MyMath.Tests
 {

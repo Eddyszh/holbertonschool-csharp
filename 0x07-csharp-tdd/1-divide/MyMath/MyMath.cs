@@ -26,12 +26,12 @@ namespace MyMath
                 }
                 return matrix;
             }
-            catch (DivideByZeroException)
+            catch (System.DivideByZeroException)
             {
                 Console.WriteLine("Num cannot be 0");
                 return null;
             }
-            catch (NullReferenceException)
+            catch (System.NullReferenceException)
             {
                 return null;
             }

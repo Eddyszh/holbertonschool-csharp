@@ -38,7 +38,7 @@ namespace MyMath.Tests
             int[,] newMatrix = new int[4, 4];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < GetLength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     newMatrix[i, j] = matrix[i, j] / div;
                 }
@@ -49,9 +49,9 @@ namespace MyMath.Tests
             //Test conditional
             bool areEqual = true;
 
-            for (int i = 0; i < GetLength(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < GetLength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i, j] != newMatrix[i, j])
                     {

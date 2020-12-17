@@ -21,7 +21,7 @@ namespace Text
             //Strip string of special chars
             List<char> newString = new List<char>();
 
-            for (int i = 0; i < newString.Count; i++)
+            for (int i = 0; i < s.Length; i++)
                 if (s[i] >= 'a' && s[i] <= 'z') newString.Add(s[i]);
 
             s = new string(newString.ToArray());
