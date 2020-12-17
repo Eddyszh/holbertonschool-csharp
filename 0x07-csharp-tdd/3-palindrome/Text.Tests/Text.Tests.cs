@@ -42,7 +42,7 @@ namespace Text.Tests
         [TestCase("Mouse")]
         [TestCase("Animal")]
         [TestCase("Love")]
-        public void IsPalindrome_WithSpecialCharacters_ReturnsTrue(string s)
+        public void IsPalindrome_WhenStringIsNotPalindrome_ReturnsFalse(string s)
         {
             //Test palindrome
             bool isPalindrome = Str.IsPalindrome(s);

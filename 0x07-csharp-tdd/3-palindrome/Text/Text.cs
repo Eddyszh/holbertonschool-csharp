@@ -16,6 +16,7 @@ namespace Text
         /// </return>
         public static bool IsPalindrome(string s)
         {
+            //Put the string in lowercase
             s = s.ToLower();
 
             //Strip string of special chars

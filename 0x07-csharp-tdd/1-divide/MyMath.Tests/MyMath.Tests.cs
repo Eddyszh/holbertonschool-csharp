@@ -8,6 +8,7 @@ namespace MyMath.Tests
     /// <summary>
     /// Class for test the Matrix class
     /// </summary>
+    [TestFixture]
     public class MatrixTests
     {
         //private field matrix
@@ -19,10 +20,11 @@ namespace MyMath.Tests
         [SetUp]
         public void Setup()
         {
+            //Test matrix
             this.matrix = new int[,] {
                 { 0, 1, 3, 4 },
                 { 5, 6, 7, 8 },
-                { 9, 10, 11, 12 }
+                { 9, 10, 11, 12 },
             };
         }
 
@@ -95,7 +97,7 @@ namespace MyMath.Tests
         /// Test divided by null and returns null
         /// </summary>
         [Test]
-        public void Divide_MatrixNull(int num)
+        public void Divide_MatrixNull()
         {
             var newMatrix = Matrix.Divide(null, 9);
 
