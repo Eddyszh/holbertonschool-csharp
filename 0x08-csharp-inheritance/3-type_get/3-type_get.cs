@@ -12,12 +12,12 @@ class Obj
     public static void Print(object myObj)
     {
         Type info = myObj.GetType();
-        Console.WriteLine("{0} Properties: ", info.Name);
+        Console.WriteLine($"{info.Name} Properties:");
         foreach (PropertyInfo item in info.GetProperties())
         {
             Console.WriteLine(item.Name);
         }
-        Console.WriteLine("{0} Methods: ", info.Name);
+        Console.WriteLine($"{info.Name} Methods:");
         foreach (MethodInfo item in info.GetMethods())
         {
             Console.WriteLine(item.Name);
