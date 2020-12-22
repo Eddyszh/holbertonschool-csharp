@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Reflection;
 
+/// <summary>
+/// Object class
+/// </summary>
 class Obj
 {
+    /// <summary>
+    /// prints the names of the available properties and methods of an object
+    /// </summary>
     public static void Print(object myObj)
     {
         Type info = myObj.GetType();
