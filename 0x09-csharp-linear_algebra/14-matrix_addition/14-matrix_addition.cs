@@ -15,9 +15,11 @@ class MatrixMath
     {
         double[,] newMatrix = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
 
-        if (matrix1.GetLength(1) > 1 && matrix1.GetLength(1) < 4)
+        if (matrix1.GetLength(0) != matrix2.GetLength(0))
+            return new double[,] {{-1}};
+        if (matrix1.GetLength(0) > 1 && matrix1.GetLength(0) < 4)
         {
-            if (matrix1.GetLength(0) == matrix2.GetLength(0) && matrix1.Length == matrix2.Length)
+            if (matrix1.GetLength(1) == matrix2.GetLength(1) && matrix1.Length == matrix2.Length)
             {
                 for (int i = 0; i < matrix1.GetLength(0); i++)
                     for (int j = 0; j < matrix1.GetLength(1); j++)

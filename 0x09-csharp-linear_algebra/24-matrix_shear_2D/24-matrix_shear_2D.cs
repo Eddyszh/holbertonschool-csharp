@@ -13,22 +13,32 @@ class MatrixMath
     /// </return>
     public static double[,] Shear2D(double[,] matrix, char direction, double factor)
     {
+        double[,] newMatrix = new double[2, 2];
+        double[,] shear = new double[,] { { 1, 0 }, { 0, 1 } };
+        double num;
 
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
             if (direction == 'x')
+                shear[1, 0] = factor;
+            else if (direction == 'y')
+                shear[0, 1] = factor;
+            else
+                return new double[,] {{-1}};
+
+            for (int i = 0; i < 2; i++)
             {
-                for (int i = 0; i < matrix.GetLength(0); i++)
-                    Math.Round(matrix[0, i] += factor, 2);
-                return matrix;
+                for (int j = 0; j < 2; j++)
+                {
+                    num = 0;
+                    for (int k = 0; k < 2; k++)
+                    {
+                        num += matrix[i, k] * shear[k, j];
+                    }
+                    newMatrix[i, j] = Math.Round(num, 2);
+                }
             }
-            if (direction == 'y')
-            {
-                for (int i = 0; i < matrix.GetLength(1); i++)
-                    Math.Round(matrix[i, 0] += factor, 2);
-                return matrix;
-            }
-            return new double[,] {{-1}};
+            return newMatrix;
         }
         return new double[,] {{-1}};
     }

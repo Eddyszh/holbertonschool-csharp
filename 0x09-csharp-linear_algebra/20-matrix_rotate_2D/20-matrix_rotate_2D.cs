@@ -21,14 +21,14 @@ class MatrixMath
 
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
         {
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < 2; i++)
             {
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < 2; j++)
                 {
                     num = 0;
-                    for (int k = 0; k < matrix.GetLength(0); k++)
+                    for (int k = 0; k < 2; k++)
                     {
-                        num += temp[j, k] * matrix[i, k];
+                        num += temp[k, j] * matrix[i, k];
                     }
                     newMatrix[i, j] = Math.Round(num, 2);
                 }
