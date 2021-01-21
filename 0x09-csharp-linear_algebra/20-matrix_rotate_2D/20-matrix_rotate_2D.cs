@@ -13,7 +13,6 @@ class MatrixMath
     /// </return>
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
-        double num;
         double[,] temp = new double[,] { {Math.Cos(angle), Math.Sin(angle)}, {Math.Sin(angle) * -1, Math.Cos(angle)} };
         double[,] newMatrix = new double[2, 2];
 
@@ -23,12 +22,10 @@ class MatrixMath
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    num = 0;
                     for (int k = 0; k < 2; k++)
                     {
-                        num += temp[k, j] * matrix[i, k];
+                        newMatrix[i, j] = Math.Round(newMatrix[i, j] + matrix[i, k] * temp[k, j], 2);
                     }
-                    newMatrix[i, j] = Math.Round(num, 2);
                 }
             }
             return newMatrix;
