@@ -16,7 +16,7 @@ class MatrixMath
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
         double num;
-        double[,] temp = new double[,] { {cos, -sin}, {sin, cos} };
+        double[,] temp = new double[,] { {cos, sin}, {-sin, cos} };
         double[,] newMatrix = new double[2, 2];
 
         if (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2)
