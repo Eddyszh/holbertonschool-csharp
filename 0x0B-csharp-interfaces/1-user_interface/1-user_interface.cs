@@ -3,7 +3,7 @@
 /// <summary>
 /// Abstract base class
 /// </summary>
-abstract class Base
+public abstract class Base
 {
     /// <summary>
     /// A read-write instance property
@@ -25,7 +25,7 @@ abstract class Base
 /// <summary>
 /// Interactive interface
 /// </summary>
-interface IInteractive
+public interface IInteractive
 {
     /// <summary>
     /// Interac method
@@ -36,7 +36,7 @@ interface IInteractive
 /// <summary>
 /// Breakable interface
 /// </summary>
-interface IBreakable
+public interface IBreakable
 {
     /// <summary>
     /// A read-write property
@@ -52,7 +52,7 @@ interface IBreakable
 /// <summary>
 /// Collectable interface
 /// </summary>
-interface ICollectable
+public interface ICollectable
 {
     /// <summary>
     /// A read-write instance property
