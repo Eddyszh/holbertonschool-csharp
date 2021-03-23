@@ -73,10 +73,7 @@ class TestObject : Base, IInteractive, IBreakable, ICollectable
     /// <summary>
     /// Interact method implementation
     /// </summary>
-    public void Interact()
-    {
-        // Method implementation.
-    }
+    public void Interact() { }
 
     /// <summary>
     /// Property implementation
@@ -86,10 +83,7 @@ class TestObject : Base, IInteractive, IBreakable, ICollectable
     /// <summary>
     /// Break method implementation
     /// </summary>
-    public void Break()
-    {
-        // Method implementation.
-    }
+    public void Break() { }
 
     /// <summary>
     /// Property implementation
@@ -99,8 +93,5 @@ class TestObject : Base, IInteractive, IBreakable, ICollectable
     /// <summary>
     /// Collect method implementation
     /// </summary>
-    public void Collect()
-    {
-        // Method implementation.
-    }
+    public void Collect() { }
 }
