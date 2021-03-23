@@ -68,7 +68,7 @@ interface ICollectable
 /// <summary>
 /// Class to test the abstract class and interfaces
 /// </summary>
-class TestObject : Base, IInteractive, IBreakable, ICollectable
+public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
     /// <summary>
     /// Interact method implementation
