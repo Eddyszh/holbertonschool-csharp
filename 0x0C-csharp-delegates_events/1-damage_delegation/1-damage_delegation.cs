@@ -28,7 +28,7 @@ public class Player
         this.name = name;
         if (maxHp <= 0)
         {
-            maxHp = 100f;
+            this.maxHp = 100f;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
         this.maxHp = maxHp;
@@ -69,8 +69,8 @@ public class Player
     ///</summary>
     public void HealDamage(float heal)
     {
-        Console.WriteLine($"{name} heals {heal} HP!");
         if (heal < 0)
             heal = 0;
+        Console.WriteLine($"{name} heals {heal} HP!");
     }
 }
