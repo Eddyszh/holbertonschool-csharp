@@ -8,15 +8,15 @@ public class Player
     ///<summary>
     /// Read-write name property
     ///</summary>
-    public string name { get; set; }
+    string name { get; set; }
     ///<summary>
     /// Read-write maxHp property
     ///</summary>
-    public float maxHp { get; set; }
+    float maxHp { get; set; }
     ///<summary>
     /// Read-write hp property
     ///</summary>
-    public float hp { get; set; }
+    float hp { get; set; }
 
     ///<summary>
     /// Constructor implementation
