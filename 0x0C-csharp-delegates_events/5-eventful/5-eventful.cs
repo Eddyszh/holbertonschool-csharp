@@ -5,8 +5,11 @@
 ///</summary>
 public enum Modifier
 {
+    ///<summary>Weak modifier</summary>
     Weak,
+    ///<summary>Base modifier</summary>
     Base,
+    ///<summary>Strong modifier</summary>
     Strong
 }
 
@@ -66,9 +69,11 @@ public class Player
     public Player(string name = "Player", float maxHp = 100f)
     {
         if (maxHp <= 0)
-            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
-        else
-            this.maxHp = maxHp;
+            {
+                maxHp = 100f;
+                Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
+            }
+        this.maxHp = maxHp;
         this.name = name;
         this.hp = maxHp;
         this.status = $"{name} is ready to go!";
@@ -94,11 +99,10 @@ public class Player
     ///<param name="damage">amount of damage</param>
     public void TakeDamage(float damage)
     {
-        //CalculateHealth calDam = ValidateHP;
         if (damage < 0)
             damage = 0;
         Console.WriteLine($"{name} takes {damage} damage!");
-        this.ValidateHP(hp - damage);
+        ValidateHP(hp - damage);
     }
 
     ///<summary>
@@ -107,10 +111,9 @@ public class Player
     ///<param name="heal">amount of heal</param>
     public void HealDamage(float heal)
     {
-        CalculateHealth calHea = ValidateHP;
         Console.WriteLine($"{name} heals {heal} HP!");
         if (heal >= 0)
-            calHea(hp + heal);
+            ValidateHP(hp + heal);
     }
 
     ///<summary>
@@ -124,7 +127,7 @@ public class Player
             this.hp = this.maxHp;
         else
             this.hp = newHp;
-        OnCheckStatus(new CurrentHPArgs(hp));
+        OnCheckStatus(new CurrentHPArgs(this.hp));
     }
 
     ///<summary>
@@ -171,10 +174,14 @@ public class Player
             Console.WriteLine("Health is low!");
     }
 
+    ///<summary>
+    /// Method to use eventhandler
+    ///</summary>
     public void OnCheckStatus(CurrentHPArgs e)
     {
-        if (e.currentHp < (this.maxHp / 4f))
+        if (e.currentHp <= (maxHp / 4f))
             HPCheck += HPValueWarning;
         HPCheck(this, e);
+        HPCheck -= HPValueWarning;
     }
 }
